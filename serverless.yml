@@ -1,0 +1,42 @@
+service: serverless-prerender
+
+plugins:
+  - serverless-webpack
+
+custom:
+  webpackIncludeModules: true
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: prod
+# Uncomment below block if you want to see debug logs
+#  environment:
+#    DEBUG: "*,-puppeteer*"
+#
+# Uncomment below line and edit bucket name if you want to use s3 cache
+#  iamRoleStatements:
+#    - Effect: "Allow"
+#      Action:
+#        - "s3:GetObject"
+#        - "s3:PutObject"
+#      Resource: "arn:aws:s3:::YOUR-BUCKET-NAME/*"
+
+functions:
+  prerender:
+    handler: prerender.handler
+    timeout: 60
+    # Use Higher memory if you need more faster render performance
+    memorySize: 1536
+    events:
+      - http:
+          path: /{proxy+}
+          method: get
+
+# Uncomment below line if you want to create s3 bucket
+#resources:
+#  Resources:
+#    S3BucketPrerender:
+#      Type: AWS::S3::Bucket
+#      Properties:
+#        BucketName: YOUR-BUCKET-NAME

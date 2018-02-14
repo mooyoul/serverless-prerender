@@ -4,6 +4,7 @@
   "description": "Serverless based lambda function to prerender Single Page Applications",
   "main": "handler.js",
   "scripts": {
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -17,6 +17,12 @@ $ serverless install --url https://github.com/mooyoul/serverless-prerender
 $ npm install
 $ serverless deploy
 
+
+## Debugging
+
+To see debug logs, Please set `DEBUG` environment variable to `serverless-prerender:*`.
+or you can see my comments on [serverless.yml](https://github.com/mooyoul/serverless-prerender/blob/e7c45c5b2956f08449e6fec5bf357ea3ed489586/serverless.yml#L13-L15)
+
 ## Todo
 
 - [ ] Update Documentations

@@ -1,5 +1,6 @@
 // Took from https://github.com/balmbees/corgi
 
+// tslint:disable
 export interface Event {
   resource?: string;
   path: string;
@@ -104,3 +105,4 @@ export interface ClientContextEnv {
 }
 
 export type HandlerCallback = (error: any, data?: any) => void;
+// tslint:enable

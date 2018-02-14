@@ -7,15 +7,17 @@ Serverless implementation of Prerender service
 ## Features
 
 - Render Single Page Application for Crawlers
-- Support caching via built-in S3CacheStrategy
+- Support caching via [built-in S3CacheStrategy](https://github.com/mooyoul/serverless-prerender/blob/master/src/strategies/s3-cache.ts) - [see usage](https://github.com/mooyoul/serverless-prerender/blob/d55d1b4971dc9ae057197ea9d49f02dcb4290bca/src/index.ts#L18-L26)
 - Compatible with [Prerender](https://github.com/prerender/prerender) (respect prerender-specific meta elements like `prerender-status-code` or `prerender-header`)
-- Customizable render Strategy via built-in StrategyLifeCycle
+- Customizable render Strategy via [built-in StrategyLifeCycle](https://github.com/mooyoul/serverless-prerender/blob/master/src/strategies/base.ts)
 
 ## Getting Started
 
+```bash
 $ serverless install --url https://github.com/mooyoul/serverless-prerender
 $ npm install
 $ serverless deploy
+```
 
 
 ## Debugging

@@ -25,7 +25,7 @@ provider:
 functions:
   prerender:
     handler: prerender.handler
-    timeout: 60
+    timeout: 30
     # Use Higher memory if you need more faster render performance
     memorySize: 1536
     events:
